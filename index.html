@@ -505,6 +505,75 @@
     .narrative-label { padding: 12px 20px; }
     .narrative-key { padding: 12px 20px; }
   }
+
+  /* ── Stage 6: Gap cards ── */
+  .gap-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .gap-card-lg {
+    border: 1.5px solid #F5D99A;
+    border-radius: 12px;
+    padding: 24px 28px;
+    background: #FFFBF0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .gap-card-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .gap-icon-lg {
+    font-size: 16px;
+    color: #7A5000;
+    flex-shrink: 0;
+  }
+
+  .gap-layer-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1.5px solid;
+    background: var(--white);
+  }
+
+  .gap-card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2C2826;
+    line-height: 1.35;
+  }
+
+  .gap-card-desc {
+    font-size: 13px;
+    color: #544F4F;
+    line-height: 1.7;
+  }
+
+  .gap-action {
+    font-size: 12px;
+    color: #7A5000;
+    line-height: 1.6;
+    padding: 10px 14px;
+    background: rgba(245,217,154,0.3);
+    border-left: 3px solid #F5D99A;
+    border-radius: 0 4px 4px 0;
+    font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    .gap-card-lg { padding: 18px 16px; }
+    .gap-card-title { font-size: 14px; }
+  }
 </style>
 </head>
 <body>
@@ -740,7 +809,7 @@
   <div class="stage-header reveal" id="s4-header">
     <div class="stage-eyebrow">
       <div class="stage-num">4</div>
-      <span class="stage-eyebrow-label">The output</span>
+      <span class="stage-eyebrow-label">Relevant source material</span>
     </div>
     <h2 class="stage-title">Relevant messaging</h2>
     <p class="stage-desc">For a <strong>Clinical</strong> buyer interested in <strong>Innovation</strong> and <strong>Collaboration</strong> in <strong>Neurology</strong> — the agent reasons across the full library and surfaces these three messages, sequenced for persuasion.</p>
@@ -840,6 +909,41 @@
     </div>
   </div>
 
+</div>
+
+
+<!-- Connector 5→6 -->
+<div class="stage-divider reveal" id="sdiv5">
+  <div class="sdiv-line"></div>
+  <div class="sdiv-arrow">&#9660;</div>
+  <div class="sdiv-label">agent identifies what's missing</div>
+</div>
+
+<!-- ══ STAGE 6: Content Gaps ══ -->
+<div class="stage">
+  <div class="stage-header reveal" id="s6-header">
+    <div class="stage-eyebrow">
+      <div class="stage-num">6</div>
+      <span class="stage-eyebrow-label">What the agent surfaces</span>
+    </div>
+    <h2 class="stage-title">Content gaps</h2>
+    <p class="stage-desc">When the agent can't find strong approved content for a section, it doesn't invent — it flags. These gaps become the brief for the next phase of library development.</p>
+  </div>
+
+  <div class="gap-grid reveal" id="gap-grid">
+
+    <div class="gap-card-lg">
+      <div class="gap-card-top">
+        <div class="gap-icon-lg">&#9651;</div>
+        <div class="gap-layer-tag" style="border-color:#CCE4F2;color:#003D6B;">Layer 04 &mdash; Portfolio</div>
+      </div>
+      <div class="gap-card-title">No portfolio-level content for this intersection</div>
+      <div class="gap-card-desc">The Clinical &times; Neurology &times; Innovation intersection has strong anchor and disease area coverage, but no approved messages connecting these themes to specific Roche portfolio areas — Core Lab, Molecular Lab, Path Lab, Point of Care, or Digital Solutions. A clinician asking "which specific Roche products deliver this?" has no approved answer.</div>
+      <div class="gap-action">Recommended: develop 2&ndash;3 portfolio bridge messages for Neurology &times; Clinical connecting to navify Digital Pathology and cobas pTau.</div>
+    </div>
+
+
+  </div>
 </div>
 
 <div class="footer-space"></div>

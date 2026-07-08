@@ -689,6 +689,64 @@
     .slide-draft-headline { font-size: 15px; }
     .slide-draft-body { padding: 16px; }
   }
+
+  .sample-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .sample-num {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--blue-deeper);
+    padding: 4px 12px;
+    border-radius: 20px;
+    flex-shrink: 0;
+  }
+
+  .sample-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--warm-light);
+  }
+
+  .gap-inline {
+    margin-top: 24px;
+    border: 1.5px solid #F5D99A;
+    border-radius: 10px;
+    padding: 20px 24px;
+    background: #FFFBF0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .gap-inline-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .gap-inline-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #7A5000;
+    margin-bottom: 4px;
+  }
+
+  .gap-inline-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2C2826;
+    line-height: 1.3;
+  }
 </style>
 </head>
 <body>
@@ -1033,6 +1091,21 @@
     </div>
 
   </div>
+
+  <!-- Gap report — inline -->
+  <div class="gap-inline reveal" id="gap-inline">
+    <div class="gap-inline-header">
+      <div class="gap-icon-lg">&#9651;</div>
+      <div>
+        <div class="gap-inline-label">Gap report</div>
+        <div class="gap-inline-title">No portfolio-level content for this intersection</div>
+      </div>
+      <div class="gap-layer-tag" style="border-color:#CCE4F2;color:#003D6B;margin-left:auto;">Layer 04 &mdash; Portfolio</div>
+    </div>
+    <div class="gap-card-desc">The Clinical &times; Neurology &times; Innovation intersection has strong anchor and disease area coverage, but no approved messages connecting these themes to specific Roche portfolio areas &mdash; Core Lab, Molecular Lab, Path Lab, Point of Care, or Digital Solutions. A clinician asking &ldquo;which specific Roche products deliver this?&rdquo; has no approved answer.</div>
+    <div class="gap-action">Recommended: develop 2&ndash;3 portfolio bridge messages for Neurology &times; Clinical connecting to navify Digital Pathology and cobas pTau.</div>
+  </div>
+
 </div>
 </div>
 
@@ -1051,7 +1124,43 @@
       <span class="stage-eyebrow-label">The deliverable</span>
     </div>
     <h2 class="stage-title">Narrative output</h2>
-    <p class="stage-desc">The agent sequences approved messages into a three-page deck. Each page has a defined narrative role. <span class="cite-ai-inline">AI</span> writes only what is needed to thread the approved content together. All connective tissue is flagged for review.</p>
+    <p class="stage-desc">The agent produces different deliverables from the same approved source material. Each output sequences the messages differently depending on format &mdash; but every claim traces back to the library. <span class="cite-ai-inline">AI</span> writes only what is needed to connect them.</p>
+  </div>
+
+  <!-- Sample 1: Ad copy -->
+  <div class="sample-header reveal">
+    <div class="sample-num">Sample 1</div>
+    <div class="sample-label">Ad copy &mdash; Clinical &middot; Neurology</div>
+  </div>
+
+  <div class="slide-draft-card reveal" id="ad1">
+    <div class="slide-draft-tab">
+      <div class="slide-tab-dot"></div>
+      <div class="slide-tab-label">Ad &mdash; Lead claim</div>
+      <span class="slide-src-chip">CM-10 &middot; CM-11 &middot; CM-14</span>
+    </div>
+    <div class="slide-draft-body">
+      <div class="slide-rationale">
+        <div class="slide-rationale-label">Agent rationale</div>
+        <div class="slide-rationale-text">Ad copy demands a single, ownable claim up front &mdash; not a narrative arc. The agent selects the most differentiated message (CM-10: co-creation) as the headline, uses CM-11 to add specificity in the body, and closes with CM-14&rsquo;s concrete outcome as proof. All three messages in one unit, tightly compressed.</div>
+      </div>
+      <div class="slide-draft-headline">
+        The science behind earlier Alzheimer&rsquo;s diagnosis was built with clinicians, not for them.
+        <span class="cite-ai-tag">AI</span>
+      </div>
+      <div class="slide-draft-copy">
+        <span>Our innovations emerge from deep collaboration with clinicians, lab scientists, hospital systems, universities, and biotech partners &mdash; not from assumptions made in isolation.</span><span class="cite-tag">CM-10</span>
+        <span> In neurology, research collaborations with Pharma partners have advanced the science across Alzheimer&rsquo;s, Parkinson&rsquo;s, TBI and MS &mdash; so that blood-based pTau tests were validated across primary and secondary care settings by design.</span><span class="cite-tag">CM-11</span><span class="cite-tag">CM-14</span>
+        <span> Earlier Alzheimer&rsquo;s diagnosis can now happen in your consulting room.</span><span class="cite-tag">CM-14</span>
+      </div>
+      <div class="slide-visual-note">&#9658; Visual: A single stark clinical moment &mdash; a patient and clinician in a primary care setting. No lab equipment.</div>
+    </div>
+  </div>
+
+  <!-- Sample 2 header -->
+  <div class="sample-header reveal" style="margin-top:32px;">
+    <div class="sample-num">Sample 2</div>
+    <div class="sample-label">Sales deck &mdash; 3 pages &middot; Clinical &middot; Neurology</div>
   </div>
 
   <!-- Slide 1 -->
@@ -1133,36 +1242,7 @@
 
 </div>
 
-<!-- Connector 5→6 -->
-<div class="stage-divider reveal" id="sdiv5">
-  <div class="sdiv-line"></div>
-  <div class="sdiv-arrow">&#9660;</div>
-  <div class="sdiv-label">agent identifies what&rsquo;s missing</div>
-</div>
 
-<!-- ══ STAGE 6: Content Gaps ══ -->
-<div class="stage">
-  <div class="stage-header reveal" id="s6-header">
-    <div class="stage-eyebrow">
-      <div class="stage-num">6</div>
-      <span class="stage-eyebrow-label">What the agent surfaces</span>
-    </div>
-    <h2 class="stage-title">Content gaps</h2>
-    <p class="stage-desc">When the agent can&rsquo;t find strong approved content for a section, it doesn&rsquo;t invent &mdash; it flags. These gaps become the brief for the next phase of library development.</p>
-  </div>
-
-  <div class="gap-grid reveal" id="gap-grid">
-    <div class="gap-card-lg">
-      <div class="gap-card-top">
-        <div class="gap-icon-lg">&#9651;</div>
-        <div class="gap-layer-tag" style="border-color:#CCE4F2;color:#003D6B;">Layer 04 &mdash; Portfolio</div>
-      </div>
-      <div class="gap-card-title">No portfolio-level content for this intersection</div>
-      <div class="gap-card-desc">The Clinical &times; Neurology &times; Innovation intersection has strong anchor and disease area coverage, but no approved messages connecting these themes to specific Roche portfolio areas &mdash; Core Lab, Molecular Lab, Path Lab, Point of Care, or Digital Solutions. A clinician asking &ldquo;which specific Roche products deliver this?&rdquo; has no approved answer.</div>
-      <div class="gap-action">Recommended: develop 2&ndash;3 portfolio bridge messages for Neurology &times; Clinical connecting to navify Digital Pathology and cobas pTau.</div>
-    </div>
-  </div>
-</div>
 
 <div class="footer-space"></div>
 

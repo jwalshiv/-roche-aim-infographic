@@ -10,8 +10,8 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --blue: #007AC2; --blue-dark: #005A8E; --blue-deeper: #003D6B;
-    --blue-light: #E6F4FB; --blue-mid: #CCE8F6;
+    --blue: #022366; --blue-dark: #0831A0; --blue-deeper: #022366;
+    --blue-light: #E8EFFD; --blue-mid: #BDE3FF;
     --warm-dark: #2C2826; --warm-mid: #544F4F; --warm-light: #706B69;
     --warm-pale: #C2BAB5; --warm-ghost: #F0EDE9;
     --white: #FFFFFF; --border: #DDD8D4; --surface: #FAFAF9;
@@ -37,8 +37,8 @@
   .hero-title { font-size: clamp(30px, 4.5vw, 52px); font-weight: 300; color: var(--white); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 18px; }
   .hero-title strong { font-weight: 600; color: var(--blue-mid); }
   .hero-subtitle { font-size: 16px; color: rgba(255,255,255,0.5); max-width: 520px; margin: 0 auto 48px; line-height: 1.7; font-weight: 300; }
-  .hero-scroll-hint { display: flex; flex-direction: column; align-items: center; gap: 8px; color: rgba(255,255,255,0.3); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
-  .scroll-line { width: 1px; height: 44px; background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent); animation: scrollPulse 2s ease-in-out infinite; }
+  .hero-scroll-hint { display: flex; flex-direction: column; align-items: center; gap: 8px; color: #BDE3FF; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .scroll-line { width: 1px; height: 44px; background: linear-gradient(to bottom, #BDE3FF, transparent); animation: scrollPulse 2s ease-in-out infinite; }
   @keyframes scrollPulse { 0%,100%{opacity:0.3} 50%{opacity:0.8} }
 
   /* Scroll reveal base */
@@ -65,10 +65,10 @@
   .layer-box { background: var(--sand); border: 1.5px solid var(--sand-border); border-radius: 12px; padding: 24px 22px 28px; display: flex; flex-direction: column; gap: 12px; }
 
   .layer-box-num { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
-  #lb1 .layer-box-num { color: #007AC2; }
-  #lb2 .layer-box-num { color: #66AFDA; }
-  #lb3 .layer-box-num { color: #A5D0E9; }
-  #lb4 .layer-box-num { color: #CCE4F2; }
+  #lb1 .layer-box-num { color: #022366; }
+  #lb2 .layer-box-num { color: #022366; }
+  #lb3 .layer-box-num { color: #022366; }
+  #lb4 .layer-box-num { color: #022366; }
   .layer-box-title { font-size: 16px; font-weight: 600; color: var(--warm-dark); line-height: 1.3; }
   .layer-box-rule { width: 28px; height: 6px; border-radius: 3px; }
   .layer-box-desc { font-size: 12px; color: var(--warm-mid); line-height: 1.65; }
@@ -78,17 +78,17 @@
   .lchip { font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; background: rgba(255,255,255,0.6); color: var(--warm-mid); }
 
   /* Per-layer color rules */
-  #lb1 .layer-box-rule { background: #007AC2; }
-  #lb1 .lchip { border: 1.5px solid #007AC2; color: #005A8E; }
+  #lb1 .layer-box-rule { background: #022366; }
+  #lb1 .lchip { border: 1.5px solid #022366; color: #0831A0; }
 
-  #lb2 .layer-box-rule { background: #66AFDA; }
-  #lb2 .lchip { border: 1.5px solid #66AFDA; color: #005F97; }
+  #lb2 .layer-box-rule { background: #0B41CD; }
+  #lb2 .lchip { border: 1.5px solid #0B41CD; color: #0831A0; }
 
-  #lb3 .layer-box-rule { background: #A5D0E9; }
-  #lb3 .lchip { border: 1.5px solid #A5D0E9; color: #003758; }
+  #lb3 .layer-box-rule { background: #1482FA; }
+  #lb3 .lchip { border: 1.5px solid #1482FA; color: #BDE3FF; }
 
-  #lb4 .layer-box-rule { background: #CCE4F2; }
-  #lb4 .lchip { border: 1.5px solid #CCE4F2; color: #001F32; }
+  #lb4 .layer-box-rule { background: #BDE3FF; }
+  #lb4 .lchip { border: 1.5px solid #BDE3FF; color: #BDE3FF; }
 
   /* ── Stage divider ── */
   .stage-divider { display: flex; flex-direction: column; align-items: center; gap: 0; padding: 16px 0; }
@@ -122,9 +122,9 @@
   .venn-clinical {
     width: 170px; height: 170px;
     top: 0; left: 50%; transform: translateX(-50%);
-    background: #66AFDA;
-    border-color: rgba(255,255,255,0.7);
-    color: #003D6B;
+    background: #0B41CD;
+    border-color: rgba(255,255,255,0.8);
+    color: #BDE3FF;
     z-index: 1;
   }
 
@@ -132,9 +132,9 @@
   .venn-innovation {
     width: 170px; height: 170px;
     top: 110px; left: -10px;
-    background: #007AC2;
-    border-color: rgba(255,255,255,0.7);
-    color: #ffffff;
+    background: #022366;
+    border-color: rgba(255,255,255,0.8);
+    color: #BDE3FF;
     z-index: 2;
   }
 
@@ -142,9 +142,9 @@
   .venn-collab {
     width: 170px; height: 170px;
     top: 110px; right: -10px;
-    background: #007AC2;
-    border-color: rgba(255,255,255,0.7);
-    color: #ffffff;
+    background: #022366;
+    border-color: rgba(255,255,255,0.8);
+    color: #BDE3FF;
     z-index: 2;
   }
 
@@ -152,9 +152,9 @@
   .venn-neuro {
     width: 170px; height: 170px;
     top: 220px; left: 50%; transform: translateX(-50%);
-    background: #A5D0E9;
-    border-color: rgba(255,255,255,0.7);
-    color: #003D6B;
+    background: #1482FA;
+    border-color: rgba(255,255,255,0.8);
+    color: #022366;
     z-index: 3;
   }
 
@@ -162,9 +162,9 @@
   .venn-portfolio {
     width: 150px; height: 150px;
     top: 340px; left: 50%; transform: translateX(-50%);
-    background: #CCE4F2;
-    border-color: rgba(255,255,255,0.7);
-    color: #003D6B;
+    background: #BDE3FF;
+    border-color: rgba(255,255,255,0.8);
+    color: #ffffff;
     z-index: 4;
   }
 
@@ -173,7 +173,7 @@
   .venn-explain-title { font-size: 18px; font-weight: 600; color: var(--warm-dark); line-height: 1.3; }
   .venn-explain-text { font-size: 13px; color: var(--warm-light); line-height: 1.7; }
   .venn-step { display: flex; gap: 14px; align-items: flex-start; }
-  .venn-step-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); margin-top: 6px; flex-shrink: 0; }
+  .venn-step-dot { width: 8px; height: 8px; border-radius: 50%; background: #0B41CD; margin-top: 6px; flex-shrink: 0; }
   .venn-step-text { font-size: 13px; color: var(--warm-mid); line-height: 1.6; }
   .venn-step-text strong { color: var(--warm-dark); font-weight: 600; }
 
@@ -200,7 +200,7 @@
     .reveal { transition: opacity 0.3s; transform: none !important; }
   }
 
-  /* ── Stage 3: Database ── */
+  /* ── Stage 3: Repository ── */
   .db-wrap { width: 100%; }
 
   .db-box {
@@ -307,7 +307,7 @@
 
   .msg-card:hover {
     border-color: var(--blue);
-    box-shadow: 0 4px 20px rgba(0,122,194,0.1);
+    box-shadow: 0 4px 20px rgba(11,65,205,0.1);
   }
 
   .msg-card-top {
@@ -681,7 +681,7 @@
     color: var(--blue-dark);
     font-style: italic;
     padding: 8px 12px;
-    background: rgba(0,122,194,0.06);
+    background: rgba(11,65,205,0.06);
     border-radius: 4px;
   }
 
@@ -772,8 +772,8 @@
     </defs>
     <rect width="1200" height="400" fill="url(#hexPat)"/>
   </svg>
-  <p class="hero-eyebrow">Roche Diagnostics &mdash; AIM Framework</p>
-  <h1 class="hero-title">How <strong>targeted messaging</strong><br>gets built</h1>
+  <p class="hero-eyebrow">Roche Diagnostics &mdash; AIM Framework Proof of Concept</p>
+  <h1 class="hero-title">How to create <strong>consistent marketing messages.</strong></h1>
   <p class="hero-subtitle">The AIM Framework organises Roche content into layers — from long-term strategic anchors through to the specific buying influences and disease areas that shape every communication.</p>
   <div class="hero-scroll-hint">
     <div class="scroll-line"></div>
@@ -790,34 +790,34 @@
       <span class="stage-eyebrow-label">The four layers</span>
     </div>
     <h2 class="stage-title">How the framework is structured</h2>
-    <p class="stage-desc">The prototype AIM Framework operates in four distinct layers (though more may be defined over time). Each layer narrows the content focus — from enduring strategic themes down to specific product portfolios.</p>
+    <p class="stage-desc">The prototype AIM Framework operates in four distinct layers (though more may be defined over time). Each layer defines how content can be used within the system, how it relates to other content, and works to narrow content focus — from enduring, brand-level themes to product-specific and portfolio topics.</p>
   </div>
 
   <!-- Arcs ABOVE the boxes -->
   <svg class="arc-row reveal" id="arcs-above" viewBox="0 0 1000 110" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
     <defs>
       <marker id="arr" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-        <polygon points="0,0 8,4 0,8" fill="#007AC2"/>
+        <polygon points="0,0 8,4 0,8" fill="#022366"/>
       </marker>
       <marker id="arr-rev" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse">
-        <polygon points="0,0 8,4 0,8" fill="#007AC2"/>
+        <polygon points="0,0 8,4 0,8" fill="#022366"/>
       </marker>
     </defs>
     <!-- L1 <-> L3 -->
     <path d="M 190,105 C 300,25 450,25 560,105"
-      stroke="#007AC2" stroke-width="2" stroke-dasharray="5 3" stroke-dashoffset="0" fill="none" opacity="0.6"
+      stroke="#022366" stroke-width="2" stroke-dasharray="5 3" stroke-dashoffset="0" fill="none" opacity="0.6"
       marker-start="url(#arr-rev)" marker-end="url(#arr)">
       <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.4s" repeatCount="indefinite"/>
     </path>
     <!-- L2 <-> L4 -->
     <path d="M 440,105 C 550,25 700,25 810,105"
-      stroke="#007AC2" stroke-width="2" stroke-dasharray="5 3" stroke-dashoffset="0" fill="none" opacity="0.6"
+      stroke="#022366" stroke-width="2" stroke-dasharray="5 3" stroke-dashoffset="0" fill="none" opacity="0.6"
       marker-start="url(#arr-rev)" marker-end="url(#arr)">
       <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.6s" begin="0.3s" repeatCount="indefinite"/>
     </path>
     <!-- L1 <-> L4 -->
     <path d="M 190,105 C 380,5 620,5 810,105"
-      stroke="#007AC2" stroke-width="2.5" stroke-dasharray="5 3" stroke-dashoffset="0" fill="none" opacity="0.85"
+      stroke="#022366" stroke-width="2.5" stroke-dasharray="5 3" stroke-dashoffset="0" fill="none" opacity="0.85"
       marker-start="url(#arr-rev)" marker-end="url(#arr)">
       <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="2s" begin="0.6s" repeatCount="indefinite"/>
     </path>
@@ -885,27 +885,27 @@
   <svg class="arc-row reveal" id="arcs-below" viewBox="0 0 1000 110" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
     <defs>
       <marker id="arr2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
-        <polygon points="0,0 8,4 0,8" fill="#007AC2"/>
+        <polygon points="0,0 8,4 0,8" fill="#022366"/>
       </marker>
       <marker id="arr2-rev" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse">
-        <polygon points="0,0 8,4 0,8" fill="#007AC2"/>
+        <polygon points="0,0 8,4 0,8" fill="#022366"/>
       </marker>
     </defs>
     <!-- L1 <-> L2 -->
     <path d="M 190,5 C 225,88 275,88 315,5"
-      stroke="#007AC2" stroke-width="2" stroke-dasharray="5 3" stroke-dashoffset="0" fill="none" opacity="0.55"
+      stroke="#022366" stroke-width="2" stroke-dasharray="5 3" stroke-dashoffset="0" fill="none" opacity="0.55"
       marker-start="url(#arr2-rev)" marker-end="url(#arr2)">
       <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.2s" begin="0.2s" repeatCount="indefinite"/>
     </path>
     <!-- L2 <-> L3 -->
     <path d="M 440,5 C 475,88 525,88 565,5"
-      stroke="#007AC2" stroke-width="2" stroke-dasharray="5 3" stroke-dashoffset="0" fill="none" opacity="0.55"
+      stroke="#022366" stroke-width="2" stroke-dasharray="5 3" stroke-dashoffset="0" fill="none" opacity="0.55"
       marker-start="url(#arr2-rev)" marker-end="url(#arr2)">
       <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.3s" begin="0.5s" repeatCount="indefinite"/>
     </path>
     <!-- L3 <-> L4 -->
     <path d="M 690,5 C 725,88 775,88 810,5"
-      stroke="#007AC2" stroke-width="2" stroke-dasharray="5 3" stroke-dashoffset="0" fill="none" opacity="0.55"
+      stroke="#022366" stroke-width="2" stroke-dasharray="5 3" stroke-dashoffset="0" fill="none" opacity="0.55"
       marker-start="url(#arr2-rev)" marker-end="url(#arr2)">
       <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.5s" begin="0.8s" repeatCount="indefinite"/>
     </path>
@@ -943,18 +943,18 @@
 
     <div class="venn-explain">
       <div class="venn-explain-title">Same ingredients ensure alignment.</div>
-      <div class="venn-explain-text">When a sales rep selects their parameters, the AIM agent searches for matching tags and rationalizes which combination of blocks creates the most persuasive narrative for that specific audience. But AI&rsquo;s guesses are heavily constrained by the content rules.</div>
+      <div class="venn-explain-text">When an affiliate marketer selects their content parameters, the system surfaces approved messages that match associated tags. Then the AIM agent rationalizes which combination of blocks creates the most persuasive narrative for that specific audience. But AI&rsquo;s guesses are heavily constrained by the content rules.</div>
       <div class="venn-step">
         <div class="venn-step-dot"></div>
-        <div class="venn-step-text"><strong>Buying influence</strong> sets the emotional register &mdash; what this person cares about most.</div>
+        <div class="venn-step-text"><strong>Buying influence</strong> sets the emotional register &mdash; what our audience cares about most.</div>
       </div>
       <div class="venn-step">
         <div class="venn-step-dot"></div>
-        <div class="venn-step-text"><strong>Anchor themes</strong> provide the approved strategic claims that anchor the narrative.</div>
+        <div class="venn-step-text"><strong>Anchor themes</strong> provide the approved strategic themes that set direction for messaged content.</div>
       </div>
       <div class="venn-step">
         <div class="venn-step-dot"></div>
-        <div class="venn-step-text"><strong>Disease &amp; portfolio bridges</strong> make it specific &mdash; grounding strategy in the customer&rsquo;s world.</div>
+        <div class="venn-step-text"><strong>Disease &amp; portfolio bridges</strong> make it specific &mdash; grounding strategy in the customer&rsquo;s world, and working to create connections between all content layers.</div>
       </div>
     </div>
   </div>
@@ -968,14 +968,14 @@
   <div class="sdiv-label">feeds into</div>
 </div>
 
-<!-- ══ STAGE 3: Approved Messaging Database ══ -->
+<!-- ══ STAGE 3: Approved Messaging Repository ══ -->
 <div class="stage">
   <div class="stage-header reveal" id="s3-header">
     <div class="stage-eyebrow">
       <div class="stage-num">3</div>
       <span class="stage-eyebrow-label">The source of truth</span>
     </div>
-    <h2 class="stage-title">Approved messaging database</h2>
+    <h2 class="stage-title">Approved messaging repository</h2>
     <p class="stage-desc">Every message in the library is tagged by anchor theme, buying influence, disease area, and portfolio &mdash; making it searchable, citable, and traceable back to its strategic source.</p>
   </div>
 
@@ -984,7 +984,7 @@
       <div class="db-header">
         <div class="db-icon">&#128196;</div>
         <div>
-          <div class="db-label">Message library</div>
+          <div class="db-label">Message repository</div>
           <div class="db-count">CM-01 &mdash; CM-28+</div>
         </div>
         <div class="db-status">Live</div>
@@ -992,31 +992,31 @@
       <div class="db-columns">
         <div class="db-col">
           <div class="db-col-head">Anchor</div>
-          <div class="db-tag db-tag-highlight" style="border-color:#007AC2;color:#fff;background:#007AC2;font-weight:600;">Innovation</div>
-          <div class="db-tag db-tag-highlight" style="border-color:#007AC2;color:#fff;background:#007AC2;font-weight:600;">Collaboration</div>
-          <div class="db-tag" style="border-color:#007AC2;color:#005A8E;">Quality</div>
-          <div class="db-tag" style="border-color:#007AC2;color:#005A8E;">Digital</div>
-          <div class="db-tag db-tag-more" style="border-color:#007AC2;color:#005A8E;">+3 more</div>
+          <div class="db-tag db-tag-highlight" style="border-color:#022366;color:#fff;background:#022366;font-weight:600;">Innovation</div>
+          <div class="db-tag db-tag-highlight" style="border-color:#022366;color:#fff;background:#022366;font-weight:600;">Collaboration</div>
+          <div class="db-tag" style="border-color:#022366;color:#BDE3FF;">Quality</div>
+          <div class="db-tag" style="border-color:#022366;color:#BDE3FF;">Digital</div>
+          <div class="db-tag db-tag-more" style="border-color:#022366;color:#BDE3FF;">+3 more</div>
         </div>
         <div class="db-col">
           <div class="db-col-head">Buying influence</div>
-          <div class="db-tag db-tag-highlight" style="border-color:#66AFDA;color:#fff;background:#66AFDA;font-weight:600;">Clinical</div>
-          <div class="db-tag" style="border-color:#66AFDA;color:#005F97;">Financial</div>
-          <div class="db-tag" style="border-color:#66AFDA;color:#005F97;">Operational</div>
+          <div class="db-tag db-tag-highlight" style="border-color:#0B41CD;color:#fff;background:#0B41CD;font-weight:600;">Clinical</div>
+          <div class="db-tag" style="border-color:#0B41CD;color:#BDE3FF;">Financial</div>
+          <div class="db-tag" style="border-color:#0B41CD;color:#BDE3FF;">Operational</div>
         </div>
         <div class="db-col">
           <div class="db-col-head">Disease area</div>
-          <div class="db-tag db-tag-highlight" style="border-color:#A5D0E9;color:#003D6B;background:#A5D0E9;font-weight:600;">Neurology</div>
-          <div class="db-tag" style="border-color:#A5D0E9;color:#003758;">Oncology</div>
-          <div class="db-tag" style="border-color:#A5D0E9;color:#003758;">Infectious Disease</div>
-          <div class="db-tag db-tag-more" style="border-color:#A5D0E9;color:#003758;">+1 more</div>
+          <div class="db-tag db-tag-highlight" style="border-color:#1482FA;color:#ffffff;background:#1482FA;font-weight:600;">Neurology</div>
+          <div class="db-tag" style="border-color:#1482FA;color:#0A2A7A;">Oncology</div>
+          <div class="db-tag" style="border-color:#1482FA;color:#0A2A7A;">Infectious Disease</div>
+          <div class="db-tag db-tag-more" style="border-color:#1482FA;color:#0A2A7A;">+1 more</div>
         </div>
         <div class="db-col">
           <div class="db-col-head">Portfolio</div>
-          <div class="db-tag db-tag-highlight" style="border-color:#CCE4F2;color:#003D6B;background:#CCE4F2;font-weight:600;">Core Lab</div>
-          <div class="db-tag" style="border-color:#CCE4F2;color:#003D6B;">Molecular Lab</div>
-          <div class="db-tag" style="border-color:#CCE4F2;color:#003D6B;">Path Lab</div>
-          <div class="db-tag db-tag-more" style="border-color:#CCE4F2;color:#003D6B;">+2 more</div>
+          <div class="db-tag db-tag-highlight" style="border-color:#BDE3FF;color:#022366;background:#BDE3FF;font-weight:600;">Core Lab</div>
+          <div class="db-tag" style="border-color:#BDE3FF;color:#BDE3FF;">Molecular Lab</div>
+          <div class="db-tag" style="border-color:#BDE3FF;color:#BDE3FF;">Path Lab</div>
+          <div class="db-tag db-tag-more" style="border-color:#BDE3FF;color:#BDE3FF;">+2 more</div>
         </div>
       </div>
     </div>
@@ -1040,7 +1040,7 @@
       <span class="stage-eyebrow-label">Relevant source material</span>
     </div>
     <h2 class="stage-title">Relevant messaging</h2>
-    <p class="stage-desc">For a <strong>Clinical</strong> buyer interested in <strong>Innovation</strong> and <strong>Collaboration</strong> in <strong>Neurology</strong> &mdash; the agent reasons across the full library and surfaces these three messages, sequenced for persuasion.</p>
+    <p class="stage-desc">For a <strong>Clinical</strong> buyer interested in <strong>Innovation</strong> and <strong>Collaboration</strong> in <strong>Neurology</strong> &mdash; the system searches across the full library and surfaces these three messages, sequenced for persuasive storytelling.</p>
   </div>
 
   <div class="msg-stack">
@@ -1053,9 +1053,9 @@
       <div class="msg-headline">&ldquo;We co-create with the people who use our solutions&rdquo;</div>
       <div class="msg-rationale">Roche designs with clinicians, not around them &mdash; a genuine partner whose innovations emerge from inside the lab, not from assumptions made in isolation.</div>
       <div class="msg-tags">
-        <span class="msg-tag" style="border-color:#007AC2;color:#005A8E;">Collaboration</span>
-        <span class="msg-tag" style="border-color:#007AC2;color:#005A8E;">Innovation</span>
-        <span class="msg-tag" style="border-color:#66AFDA;color:#005F97;">Clinical</span>
+        <span class="msg-tag" style="border-color:#022366;color:#BDE3FF;">Collaboration</span>
+        <span class="msg-tag" style="border-color:#022366;color:#BDE3FF;">Innovation</span>
+        <span class="msg-tag" style="border-color:#0B41CD;color:#BDE3FF;">Clinical</span>
       </div>
       <div class="msg-proof">Proof: 20+ AI algorithm partners in navify open environment &middot; 133+ active partnerships</div>
     </div>
@@ -1068,9 +1068,9 @@
       <div class="msg-headline">&ldquo;We collaborate with universities, health systems, biotech firms and AI companies to bring you tests that are better evidenced, more clinically relevant and faster to reach your lab.&rdquo;</div>
       <div class="msg-rationale">Research collaborations with Pharma partners have advanced the science across Alzheimer&rsquo;s, Parkinson&rsquo;s, TBI and MS &mdash; so that by the time a test reaches your lab, the clinical evidence base is already deep.</div>
       <div class="msg-tags">
-        <span class="msg-tag" style="border-color:#007AC2;color:#005A8E;">Collaboration</span>
-        <span class="msg-tag" style="border-color:#66AFDA;color:#005F97;">Clinical</span>
-        <span class="msg-tag" style="border-color:#A5D0E9;color:#003758;">Neurology</span>
+        <span class="msg-tag" style="border-color:#022366;color:#BDE3FF;">Collaboration</span>
+        <span class="msg-tag" style="border-color:#0B41CD;color:#BDE3FF;">Clinical</span>
+        <span class="msg-tag" style="border-color:#1482FA;color:#0A2A7A;">Neurology</span>
       </div>
       <div class="msg-proof">Proof: 250+ external R&amp;D alliances &middot; Pharma partnerships across Alzheimer&rsquo;s, Parkinson&rsquo;s, TBI and MS</div>
     </div>
@@ -1083,9 +1083,9 @@
       <div class="msg-headline">&ldquo;Blood-based pTau tests were validated across primary and secondary care settings by design, so that earlier Alzheimer&rsquo;s diagnosis can happen in your consulting room, not only in a specialist memory clinic.&rdquo;</div>
       <div class="msg-rationale">The same quality available to tertiary specialists is now accessible in primary care, without requiring the infrastructure of a specialist centre.</div>
       <div class="msg-tags">
-        <span class="msg-tag" style="border-color:#007AC2;color:#005A8E;">Innovation</span>
-        <span class="msg-tag" style="border-color:#66AFDA;color:#005F97;">Clinical</span>
-        <span class="msg-tag" style="border-color:#A5D0E9;color:#003758;">Neurology</span>
+        <span class="msg-tag" style="border-color:#022366;color:#BDE3FF;">Innovation</span>
+        <span class="msg-tag" style="border-color:#0B41CD;color:#BDE3FF;">Clinical</span>
+        <span class="msg-tag" style="border-color:#1482FA;color:#0A2A7A;">Neurology</span>
       </div>
       <div class="msg-proof">Proof: pTau validated across primary and secondary care &middot; Earlier Alzheimer&rsquo;s diagnosis without tertiary infrastructure</div>
     </div>
@@ -1100,7 +1100,7 @@
         <div class="gap-inline-label">Gap report</div>
         <div class="gap-inline-title">No Core Lab-level content for this intersection</div>
       </div>
-      <div class="gap-layer-tag" style="border-color:#CCE4F2;color:#003D6B;margin-left:auto;">Layer 04 &mdash; Portfolio</div>
+      <div class="gap-layer-tag" style="border-color:#BDE3FF;color:#BDE3FF;margin-left:auto;">Layer 04 &mdash; Portfolio</div>
     </div>
     <div class="gap-card-desc">The Clinical &times; Neurology &times; Innovation intersection has strong anchor and disease area coverage, but no approved messages connecting these themes to the Core Lab product area specifically. A clinician asking &ldquo;which Core Lab solutions deliver this in neurology?&rdquo; has no approved answer.</div>
     <div class="gap-action">Recommended: develop 2&ndash;3 Core Lab bridge messages for Neurology &times; Clinical, connecting to cobas pTau and relevant core lab automation solutions.</div>

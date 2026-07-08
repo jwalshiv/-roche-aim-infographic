@@ -585,6 +585,110 @@
   @media (max-width: 768px) {
     .arc-row { display: none; }
   }
+
+  /* ── Slide draft cards (Stage 5) ── */
+  .slide-draft-card {
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--white);
+    margin-bottom: 16px;
+  }
+
+  .slide-draft-tab {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: var(--warm-ghost);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .slide-tab-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--blue);
+    flex-shrink: 0;
+  }
+
+  .slide-tab-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--warm-light);
+    flex: 1;
+  }
+
+  .slide-src-chip {
+    font-size: 10px;
+    font-family: "Courier New", monospace;
+    font-weight: 600;
+    color: var(--blue);
+    background: var(--blue-light);
+    border: 1px solid var(--blue-mid);
+    padding: 2px 8px;
+    border-radius: 3px;
+  }
+
+  .slide-draft-body {
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .slide-rationale {
+    background: var(--blue-light);
+    border-left: 3px solid var(--blue);
+    border-radius: 0 6px 6px 0;
+    padding: 12px 16px;
+  }
+
+  .slide-rationale-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 6px;
+  }
+
+  .slide-rationale-text {
+    font-size: 12px;
+    color: var(--blue-dark);
+    line-height: 1.65;
+  }
+
+  .slide-draft-headline {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--warm-dark);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    padding-top: 4px;
+    border-top: 1px solid var(--warm-ghost);
+  }
+
+  .slide-draft-copy {
+    font-size: 13px;
+    color: var(--warm-mid);
+    line-height: 1.75;
+  }
+
+  .slide-visual-note {
+    font-size: 12px;
+    color: var(--blue-dark);
+    font-style: italic;
+    padding: 8px 12px;
+    background: rgba(0,122,194,0.06);
+    border-radius: 4px;
+  }
+
+  @media (max-width: 768px) {
+    .slide-draft-headline { font-size: 15px; }
+    .slide-draft-body { padding: 16px; }
+  }
 </style>
 </head>
 <body>
@@ -947,29 +1051,86 @@
       <span class="stage-eyebrow-label">The deliverable</span>
     </div>
     <h2 class="stage-title">Narrative output</h2>
-    <p class="stage-desc">The agent threads approved messages into a coherent narrative. AI is instructed to limit content generation as much as possible and to use approved content as much as possible. All content is cited as <span class="cite-ai-inline">AI</span> or Approved Content <span class="cite-msg-inline">CM-XX</span>. AI content is submitted to a candidate pool, where it can be approved or rejected for official use.</p>
+    <p class="stage-desc">The agent sequences approved messages into a three-page deck. Each page has a defined narrative role. <span class="cite-ai-inline">AI</span> writes only what is needed to thread the approved content together. All connective tissue is flagged for review.</p>
   </div>
 
-  <div class="narrative-card reveal" id="nc1">
-    <div class="narrative-label">
-      <span class="narrative-deliverable">Sample Output</span>
-      <span class="narrative-audience">Clinical &middot; Neurology</span>
+  <!-- Slide 1 -->
+  <div class="slide-draft-card reveal" id="sd1">
+    <div class="slide-draft-tab">
+      <div class="slide-tab-dot"></div>
+      <div class="slide-tab-label">Page 1 &mdash; Establish empathy</div>
+      <span class="slide-src-chip">CM-10</span>
     </div>
-    <div class="narrative-headline">
-      In neurology, the evidence base your patients rely on was built in collaboration &mdash; and it reaches your consulting room by design.
-      <span class="cite-ai-tag">AI</span>
-    </div>
-    <div class="narrative-body">
-      <span class="narrative-sentence">Our innovations emerge from deep collaboration with clinicians, lab scientists, hospital systems, universities, and biotech partners &mdash; not from assumptions made in isolation.</span><span class="cite-tag">CM-10</span>
-      <span class="narrative-sentence"> In neurology specifically, that means working with universities, health systems, biotech firms and AI companies to bring you tests that are better evidenced, more clinically relevant and faster to reach your lab.</span><span class="cite-tag">CM-11</span>
-      <span class="narrative-sentence"> Research collaborations with Pharma partners have advanced the science across Alzheimer&rsquo;s, Parkinson&rsquo;s, TBI and MS, so that by the time a test reaches your lab, the clinical evidence base is already deep.</span><span class="cite-tag">CM-11</span>
-      <span class="narrative-sentence"> Blood-based pTau tests, for example, were validated across primary and secondary care settings by design &mdash; so that earlier Alzheimer&rsquo;s diagnosis can happen in your consulting room, not only in a specialist memory clinic.</span><span class="cite-tag">CM-14</span>
-    </div>
-    <div class="narrative-key">
-      <span class="cite-tag">CM-XX</span> Sourced verbatim from approved library &nbsp;&nbsp;
-      <span class="cite-ai-tag">AI</span> Connective tissue &mdash; flagged for review
+    <div class="slide-draft-body">
+      <div class="slide-rationale">
+        <div class="slide-rationale-label">Agent rationale</div>
+        <div class="slide-rationale-text">A clinical buyer needs to feel heard before they will engage with capability claims. CM-10 opens the conversation by repositioning Roche as a partner who designs <em>with</em> clinicians, not around them. In neurology, where diagnostic pathways are still evolving, this lands as scientific humility rather than vendor confidence. Lead with trust.</div>
+      </div>
+      <div class="slide-draft-headline">
+        The best diagnostic advances in neurology start inside the lab &mdash; not the boardroom.
+        <span class="cite-ai-tag">AI</span>
+      </div>
+      <div class="slide-draft-copy">
+        <span>Our innovations emerge from deep collaboration with clinicians, lab scientists, hospital systems, universities, and biotech partners &mdash; not from assumptions made in isolation.</span><span class="cite-tag">CM-10</span>
+      </div>
+      <div class="slide-visual-note">&#9658; Visual: a clinician-researcher working environment &mdash; not a boardroom or stock imagery.</div>
     </div>
   </div>
+
+  <!-- Slide 2 -->
+  <div class="slide-draft-card reveal reveal-delay-1" id="sd2">
+    <div class="slide-draft-tab">
+      <div class="slide-tab-dot"></div>
+      <div class="slide-tab-label">Page 2 &mdash; Prove the collaboration at scale</div>
+      <span class="slide-src-chip">CM-11</span>
+    </div>
+    <div class="slide-draft-body">
+      <div class="slide-rationale">
+        <div class="slide-rationale-label">Agent rationale</div>
+        <div class="slide-rationale-text">Once trust is established, the clinician needs evidence that the collaboration is real and specific to their world. CM-11, tailored for neurology, provides that proof &mdash; naming Alzheimer&rsquo;s, Parkinson&rsquo;s, TBI and MS directly. The argument moves from philosophy to practice: by the time a test reaches your lab, the evidence is already deep.</div>
+      </div>
+      <div class="slide-draft-headline">
+        In neurology, we collaborate so the science is settled before the test reaches your lab.
+        <span class="cite-ai-tag">AI</span>
+      </div>
+      <div class="slide-draft-copy">
+        <span>We collaborate with universities, health systems, biotech firms and AI companies to bring you tests that are better evidenced, more clinically relevant and faster to reach your lab.</span><span class="cite-tag">CM-11</span>
+        <span> Research collaborations with Pharma partners have advanced the science across Alzheimer&rsquo;s, Parkinson&rsquo;s, TBI and MS, so that by the time a test reaches your lab, the clinical evidence base is already deep.</span><span class="cite-tag">CM-11</span>
+      </div>
+      <div class="slide-visual-note">&#9658; Visual: a partner network or pipeline graphic &mdash; showing reach across disease areas without a dense text slide.</div>
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide-draft-card reveal reveal-delay-2" id="sd3">
+    <div class="slide-draft-tab">
+      <div class="slide-tab-dot"></div>
+      <div class="slide-tab-label">Page 3 &mdash; Land the clinical outcome</div>
+      <span class="slide-src-chip">CM-14</span>
+    </div>
+    <div class="slide-draft-body">
+      <div class="slide-rationale">
+        <div class="slide-rationale-label">Agent rationale</div>
+        <div class="slide-rationale-text">The close grounds everything in a concrete patient outcome. CM-14 tailored for neurology moves the argument from Roche&rsquo;s capabilities to the clinician&rsquo;s reality: earlier Alzheimer&rsquo;s diagnosis in your consulting room, not only in a specialist memory clinic. This is the &ldquo;so what&rdquo; slide &mdash; the point at which the collaboration narrative translates into something the clinician can act on.</div>
+      </div>
+      <div class="slide-draft-headline">
+        Earlier Alzheimer&rsquo;s diagnosis, in your consulting room &mdash; not only in a specialist memory clinic.
+        <span class="cite-tag">CM-14</span>
+      </div>
+      <div class="slide-draft-copy">
+        <span>Blood-based pTau tests were validated across primary and secondary care settings by design, so that earlier Alzheimer&rsquo;s diagnosis can happen in your consulting room, not only in a specialist memory clinic.</span><span class="cite-tag">CM-14</span>
+        <span> The same clinical quality your colleagues in neurology centres rely on is available to you and your patients, without requiring the infrastructure of a tertiary centre.</span><span class="cite-tag">CM-14</span>
+      </div>
+      <div class="slide-visual-note">&#9658; Visual: a primary care setting &mdash; a GP or neurologist in a consulting room, not a hospital lab.</div>
+    </div>
+  </div>
+
+  <!-- Citation key -->
+  <div class="narrative-key reveal">
+    <span class="cite-tag">CM-XX</span> Sourced verbatim from approved library &nbsp;&nbsp;
+    <span class="cite-ai-tag">AI</span> Connective tissue &mdash; auto-flagged to candidate pool for review
+  </div>
+
 </div>
 
 <!-- Connector 5→6 -->

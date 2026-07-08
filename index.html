@@ -574,6 +574,17 @@
     .gap-card-lg { padding: 18px 16px; }
     .gap-card-title { font-size: 14px; }
   }
+
+  .arc-row {
+    width: 100%;
+    height: 90px;
+    display: block;
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    .arc-row { display: none; }
+  }
 </style>
 </head>
 <body>
@@ -620,6 +631,37 @@
     <p class="stage-desc">The prototype AIM Framework operates in four distinct layers (though more may be defined over time). Each layer narrows the content focus — from enduring strategic themes down to specific product portfolios.</p>
   </div>
 
+  <!-- Arcs ABOVE the boxes -->
+  <svg class="arc-row reveal" id="arcs-above" viewBox="0 0 1000 110" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <defs>
+      <marker id="arr" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+        <polygon points="0,0 8,4 0,8" fill="#007AC2"/>
+      </marker>
+      <marker id="arr-rev" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse">
+        <polygon points="0,0 8,4 0,8" fill="#007AC2"/>
+      </marker>
+    </defs>
+    <!-- L1 <-> L3 -->
+    <path d="M 190,105 C 300,25 450,25 560,105"
+      stroke="#007AC2" stroke-width="2" stroke-dasharray="5 3" stroke-dashoffset="0" fill="none" opacity="0.6"
+      marker-start="url(#arr-rev)" marker-end="url(#arr)">
+      <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.4s" repeatCount="indefinite"/>
+    </path>
+    <!-- L2 <-> L4 -->
+    <path d="M 440,105 C 550,25 700,25 810,105"
+      stroke="#007AC2" stroke-width="2" stroke-dasharray="5 3" stroke-dashoffset="0" fill="none" opacity="0.6"
+      marker-start="url(#arr-rev)" marker-end="url(#arr)">
+      <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.6s" begin="0.3s" repeatCount="indefinite"/>
+    </path>
+    <!-- L1 <-> L4 -->
+    <path d="M 190,105 C 380,5 620,5 810,105"
+      stroke="#007AC2" stroke-width="2.5" stroke-dasharray="5 3" stroke-dashoffset="0" fill="none" opacity="0.85"
+      marker-start="url(#arr-rev)" marker-end="url(#arr)">
+      <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+    </path>
+  </svg>
+
+  <!-- The four boxes -->
   <div class="layer-grid">
 
     <div class="layer-box reveal" id="lb1">
@@ -676,8 +718,764 @@
     </div>
 
   </div>
-</div>
 
+  <!-- Arcs BELOW the boxes -->
+  <svg class="arc-row reveal" id="arcs-below" viewBox="0 0 1000 110" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <defs>
+      <marker id="arr2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+        <polygon points="0,0 8,4 0,8" fill="#007AC2"/>
+      </marker>
+      <marker id="arr2-rev" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse">
+        <polygon points="0,0 8,4 0,8" fill="#007AC2"/>
+      </marker>
+    </defs>
+    <!-- L1 <-> L2 -->
+    <path d="M 190,5 C 225,88 275,88 315,5"
+      stroke="#007AC2" stroke-width="2" stroke-dasharray="5 3" stroke-dashoffset="0" fill="none" opacity="0.55"
+      marker-start="url(#arr2-rev)" marker-end="url(#arr2)">
+      <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.2s" begin="0.2s" repeatCount="indefinite"/>
+    </path>
+    <!-- L2 <-> L3 -->
+    <path d="M 440,5 C 475,88 525,88 565,5"
+      stroke="#007AC2" stroke-width="2" stroke-dasharray="5 3" stroke-dashoffset="0" fill="none" opacity="0.55"
+      marker-start="url(#arr2-rev)" marker-end="url(#arr2)">
+      <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.3s" begin="0.5s" repeatCount="indefinite"/>
+    </path>
+    <!-- L3 <-> L4 -->
+    <path d="M 690,5 C 725,88 775,88 810,5"
+      stroke="#007AC2" stroke-width="2" stroke-dasharray="5 3" stroke-dashoffset="0" fill="none" opacity="0.55"
+      marker-start="url(#arr2-rev)" marker-end="url(#arr2)">
+      <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1.5s" begin="0.8s" repeatCount="indefinite"/>
+    </path>
+  </svg>
+
+PE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roche AIM Framework</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue: #007AC2; --blue-dark: #005A8E; --blue-deeper: #003D6B;
+    --blue-light: #E6F4FB; --blue-mid: #CCE8F6;
+    --warm-dark: #2C2826; --warm-mid: #544F4F; --warm-light: #706B69;
+    --warm-pale: #C2BAB5; --warm-ghost: #F0EDE9;
+    --white: #FFFFFF; --border: #DDD8D4; --surface: #FAFAF9;
+    --sand: #F5F0E8; --sand-border: #E0D8CC;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: "Inter", -apple-system, sans-serif; background: var(--surface); color: var(--warm-dark); overflow-x: hidden; }
+
+  /* Header */
+  header { background: var(--white); border-bottom: 1px solid var(--border); padding: 0 48px; height: 64px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+  .logo-group { display: flex; align-items: center; gap: 16px; }
+  .roche-logo { height: 36px; width: auto; }
+  .logo-text { display: flex; flex-direction: column; line-height: 1.2; }
+  .logo-company { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; color: var(--blue); text-transform: uppercase; }
+  .logo-product { font-size: 11px; font-weight: 400; color: var(--warm-light); letter-spacing: 0.05em; text-transform: uppercase; }
+  .header-badge { font-size: 11px; font-weight: 500; color: var(--blue); background: var(--blue-light); border: 1px solid var(--blue-mid); padding: 4px 12px; border-radius: 20px; letter-spacing: 0.04em; }
+
+  /* Hero */
+  .hero { background: var(--blue-deeper); padding: 88px 48px 72px; text-align: center; position: relative; overflow: hidden; }
+  .hero-hex-bg { position: absolute; inset: 0; opacity: 0.04; pointer-events: none; }
+  .hero-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue-mid); margin-bottom: 18px; }
+  .hero-title { font-size: clamp(30px, 4.5vw, 52px); font-weight: 300; color: var(--white); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 18px; }
+  .hero-title strong { font-weight: 600; color: var(--blue-mid); }
+  .hero-subtitle { font-size: 16px; color: rgba(255,255,255,0.5); max-width: 520px; margin: 0 auto 48px; line-height: 1.7; font-weight: 300; }
+  .hero-scroll-hint { display: flex; flex-direction: column; align-items: center; gap: 8px; color: rgba(255,255,255,0.3); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .scroll-line { width: 1px; height: 44px; background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent); animation: scrollPulse 2s ease-in-out infinite; }
+  @keyframes scrollPulse { 0%,100%{opacity:0.3} 50%{opacity:0.8} }
+
+  /* Scroll reveal base */
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.65s cubic-bezier(0.4,0,0.2,1), transform 0.65s cubic-bezier(0.4,0,0.2,1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ── STAGE 1: Four framework layers ── */
+  .stage { max-width: 1100px; margin: 0 auto; padding: 96px 48px; }
+
+  .stage-header { margin-bottom: 56px; }
+  .stage-eyebrow { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .stage-num { width: 26px; height: 26px; border-radius: 50%; background: var(--blue); color: var(--white); font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .stage-eyebrow-label { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); }
+  .stage-title { font-size: clamp(22px, 3vw, 34px); font-weight: 600; color: var(--warm-dark); line-height: 1.2; margin-bottom: 10px; letter-spacing: -0.01em; }
+  .stage-desc { font-size: 14px; color: var(--warm-light); line-height: 1.7; max-width: 540px; }
+
+  /* Four beige definition boxes */
+  .layer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+  .layer-box { background: var(--sand); border: 1.5px solid var(--sand-border); border-radius: 12px; padding: 24px 22px 28px; display: flex; flex-direction: column; gap: 12px; }
+
+  .layer-box-num { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  #lb1 .layer-box-num { color: #007AC2; }
+  #lb2 .layer-box-num { color: #66AFDA; }
+  #lb3 .layer-box-num { color: #A5D0E9; }
+  #lb4 .layer-box-num { color: #CCE4F2; }
+  .layer-box-title { font-size: 16px; font-weight: 600; color: var(--warm-dark); line-height: 1.3; }
+  .layer-box-rule { width: 28px; height: 6px; border-radius: 3px; }
+  .layer-box-desc { font-size: 12px; color: var(--warm-mid); line-height: 1.65; }
+
+  /* Chips below each box */
+  .layer-box-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+  .lchip { font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; background: rgba(255,255,255,0.6); color: var(--warm-mid); }
+
+  /* Per-layer color rules */
+  #lb1 .layer-box-rule { background: #007AC2; }
+  #lb1 .lchip { border: 1.5px solid #007AC2; color: #005A8E; }
+
+  #lb2 .layer-box-rule { background: #66AFDA; }
+  #lb2 .lchip { border: 1.5px solid #66AFDA; color: #005F97; }
+
+  #lb3 .layer-box-rule { background: #A5D0E9; }
+  #lb3 .lchip { border: 1.5px solid #A5D0E9; color: #003758; }
+
+  #lb4 .layer-box-rule { background: #CCE4F2; }
+  #lb4 .lchip { border: 1.5px solid #CCE4F2; color: #001F32; }
+
+  /* ── Stage divider ── */
+  .stage-divider { display: flex; flex-direction: column; align-items: center; gap: 0; padding: 16px 0; }
+  .sdiv-line { width: 1px; height: 56px; background: linear-gradient(to bottom, var(--border), var(--blue)); }
+  .sdiv-arrow { color: var(--blue); font-size: 16px; margin-top: -2px; }
+  .sdiv-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-pale); margin-top: 8px; }
+
+  /* ── STAGE 2: Venn overlap diagram ── */
+  .stage-alt { background: var(--white); }
+  .stage-alt .stage { padding-top: 80px; }
+
+  .venn-wrap { position: relative; width: 100%; display: flex; align-items: flex-start; justify-content: center; gap: 40px; }
+
+  .venn-diagram { position: relative; width: 340px; height: 500px; flex-shrink: 0; }
+
+  /* Circles — overlapping like the draft */
+  .venn-box {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  /* Clinical — top center (Buying Influence = Layer 2) */
+  .venn-clinical {
+    width: 170px; height: 170px;
+    top: 0; left: 50%; transform: translateX(-50%);
+    background: #66AFDA;
+    border-color: rgba(255,255,255,0.7);
+    color: #003D6B;
+    z-index: 1;
+  }
+
+  /* Innovation — middle left (Anchor = Layer 1) */
+  .venn-innovation {
+    width: 170px; height: 170px;
+    top: 110px; left: -10px;
+    background: #007AC2;
+    border-color: rgba(255,255,255,0.7);
+    color: #ffffff;
+    z-index: 2;
+  }
+
+  /* Collaboration — middle right (Anchor = Layer 1) */
+  .venn-collab {
+    width: 170px; height: 170px;
+    top: 110px; right: -10px;
+    background: #007AC2;
+    border-color: rgba(255,255,255,0.7);
+    color: #ffffff;
+    z-index: 2;
+  }
+
+  /* Neurology — below center (Disease Area Bridge = Layer 3) */
+  .venn-neuro {
+    width: 170px; height: 170px;
+    top: 220px; left: 50%; transform: translateX(-50%);
+    background: #A5D0E9;
+    border-color: rgba(255,255,255,0.7);
+    color: #003D6B;
+    z-index: 3;
+  }
+
+  /* Portfolio — bottom center (Portfolio Area Bridge = Layer 4) */
+  .venn-portfolio {
+    width: 150px; height: 150px;
+    top: 340px; left: 50%; transform: translateX(-50%);
+    background: #CCE4F2;
+    border-color: rgba(255,255,255,0.7);
+    color: #003D6B;
+    z-index: 4;
+  }
+
+  /* Explanation panel beside diagram */
+  .venn-explain { flex: 1; padding-left: 64px; display: flex; flex-direction: column; gap: 20px; }
+  .venn-explain-title { font-size: 18px; font-weight: 600; color: var(--warm-dark); line-height: 1.3; }
+  .venn-explain-text { font-size: 13px; color: var(--warm-light); line-height: 1.7; }
+  .venn-step { display: flex; gap: 14px; align-items: flex-start; }
+  .venn-step-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); margin-top: 6px; flex-shrink: 0; }
+  .venn-step-text { font-size: 13px; color: var(--warm-mid); line-height: 1.6; }
+  .venn-step-text strong { color: var(--warm-dark); font-weight: 600; }
+
+  .footer-space { height: 120px; }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    header { padding: 0 20px; height: 52px; }
+    .logo-product { display: none; }
+    .hero { padding: 60px 24px 52px; }
+    .stage { padding: 56px 24px; }
+    .layer-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .venn-wrap { flex-direction: column; gap: 40px; }
+    .venn-explain { padding-left: 0; }
+    .venn-diagram { width: 260px; height: 400px; }
+    .venn-clinical  { width: 130px; height: 130px; }
+    .venn-innovation { width: 130px; height: 130px; top: 85px; left: 0; }
+    .venn-collab    { width: 130px; height: 130px; top: 85px; right: 0; }
+    .venn-neuro     { width: 130px; height: 130px; top: 170px; }
+    .venn-portfolio { width: 120px; height: 120px; top: 270px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { transition: opacity 0.3s; transform: none !important; }
+  }
+
+  /* ── Stage 3: Database ── */
+  .db-wrap { width: 100%; }
+
+  .db-box {
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    background: var(--white);
+    overflow: hidden;
+  }
+
+  .db-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--border);
+    background: var(--warm-ghost);
+  }
+
+  .db-icon { font-size: 24px; }
+
+  .db-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--warm-dark);
+  }
+
+  .db-count {
+    font-size: 11px;
+    color: var(--warm-light);
+    font-family: 'Courier New', monospace;
+    margin-top: 2px;
+  }
+
+  .db-status {
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 600;
+    color: #1A7A3A;
+    background: #E6F4EB;
+    border: 1px solid #A8D5B5;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.04em;
+  }
+
+  .db-columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+
+  .db-col {
+    padding: 20px 24px;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .db-col:last-child { border-right: none; }
+
+  .db-col-head {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--warm-pale);
+    margin-bottom: 4px;
+  }
+
+  .db-tag {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1.5px solid;
+    background: var(--white);
+    display: inline-block;
+    width: fit-content;
+  }
+
+  .db-tag-more {
+    opacity: 0.5;
+    font-style: italic;
+  }
+
+  /* ── Stage 4: Message cards ── */
+  .msg-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .msg-card {
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+
+  .msg-card:hover {
+    border-color: var(--blue);
+    box-shadow: 0 4px 20px rgba(0,122,194,0.1);
+  }
+
+  .msg-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .msg-priority {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+
+  .msg-priority.lead    { color: #1A5C2A; background: #E6F4EB; }
+  .msg-priority.support { color: #7A5000; background: #FFF3DB; }
+  .msg-priority.bridge  { color: #00587A; background: #E0F3FB; }
+
+  .msg-id {
+    font-size: 11px;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+    color: var(--blue);
+    background: var(--blue-light);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  .msg-headline {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--warm-dark);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+
+  .msg-rationale {
+    font-size: 13px;
+    color: var(--warm-mid);
+    line-height: 1.7;
+  }
+
+  .msg-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .msg-tag {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1.5px solid;
+    background: var(--white);
+  }
+
+  .msg-proof {
+    font-size: 11px;
+    color: var(--warm-pale);
+    line-height: 1.6;
+    padding-top: 8px;
+    border-top: 1px solid var(--warm-ghost);
+    font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    .db-columns { grid-template-columns: 1fr 1fr; }
+    .db-col { padding: 16px; }
+    .db-col:nth-child(2) { border-right: none; }
+    .msg-headline { font-size: 15px; }
+    .msg-card { padding: 18px 16px; }
+  }
+
+  /* ── Stage 5: Narrative output ── */
+  .narrative-card {
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    background: var(--white);
+    overflow: hidden;
+  }
+
+  .narrative-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 28px;
+    background: var(--blue-deeper);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .narrative-deliverable {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .narrative-audience {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--blue-mid);
+  }
+
+  .narrative-headline {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--warm-dark);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    padding: 32px 28px 20px;
+    border-bottom: 1px solid var(--warm-ghost);
+  }
+
+  .narrative-body {
+    font-size: 15px;
+    color: var(--warm-mid);
+    line-height: 1.8;
+    padding: 24px 28px;
+    border-bottom: 1px solid var(--warm-ghost);
+  }
+
+  .narrative-sentence { }
+
+  .cite-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-family: "Courier New", monospace;
+    font-weight: 600;
+    color: var(--blue);
+    background: var(--blue-light);
+    border: 1px solid var(--blue-mid);
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin: 0 3px;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  .cite-ai-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-family: "Courier New", monospace;
+    font-weight: 600;
+    color: var(--warm-mid);
+    background: var(--warm-ghost);
+    border: 1px solid var(--border);
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin: 0 3px;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  .cite-msg-inline {
+    display: inline-block;
+    font-size: 11px;
+    font-family: "Courier New", monospace;
+    font-weight: 600;
+    color: var(--blue);
+    background: var(--blue-light);
+    border: 1px solid var(--blue-mid);
+    padding: 1px 6px;
+    border-radius: 3px;
+    vertical-align: middle;
+  }
+
+  .cite-ai-inline {
+    display: inline-block;
+    font-size: 11px;
+    font-family: "Courier New", monospace;
+    font-weight: 600;
+    color: var(--warm-mid);
+    background: var(--warm-ghost);
+    border: 1px solid var(--border);
+    padding: 1px 6px;
+    border-radius: 3px;
+    vertical-align: middle;
+  }
+
+  .narrative-key {
+    padding: 14px 28px;
+    background: var(--warm-ghost);
+    font-size: 11px;
+    color: var(--warm-light);
+  }
+
+  @media (max-width: 768px) {
+    .narrative-headline { font-size: 17px; padding: 24px 20px 16px; }
+    .narrative-body { font-size: 14px; padding: 20px; }
+    .narrative-label { padding: 12px 20px; }
+    .narrative-key { padding: 12px 20px; }
+  }
+
+  /* ── Stage 6: Gap cards ── */
+  .gap-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .gap-card-lg {
+    border: 1.5px solid #F5D99A;
+    border-radius: 12px;
+    padding: 24px 28px;
+    background: #FFFBF0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .gap-card-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .gap-icon-lg {
+    font-size: 16px;
+    color: #7A5000;
+    flex-shrink: 0;
+  }
+
+  .gap-layer-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1.5px solid;
+    background: var(--white);
+  }
+
+  .gap-card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2C2826;
+    line-height: 1.35;
+  }
+
+  .gap-card-desc {
+    font-size: 13px;
+    color: #544F4F;
+    line-height: 1.7;
+  }
+
+  .gap-action {
+    font-size: 12px;
+    color: #7A5000;
+    line-height: 1.6;
+    padding: 10px 14px;
+    background: rgba(245,217,154,0.3);
+    border-left: 3px solid #F5D99A;
+    border-radius: 0 4px 4px 0;
+    font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    .gap-card-lg { padding: 18px 16px; }
+    .gap-card-title { font-size: 14px; }
+  }
+
+  .arc-row {
+    width: 100%;
+    height: 90px;
+    display: block;
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    .arc-row { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-group">
+    <img src="data:image/webp;base64,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" alt="Roche" class="roche-logo">
+    <div class="logo-text">
+      <span class="logo-company">Roche Diagnostics</span>
+      <span class="logo-product">AIM Framework</span>
+    </div>
+  </div>
+  <div class="header-badge">Content Architecture</div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <svg class="hero-hex-bg" viewBox="0 0 1200 400" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <pattern id="hexPat" x="0" y="0" width="80" height="92" patternUnits="userSpaceOnUse">
+        <polygon points="40,4 72,22 72,58 40,76 8,58 8,22" fill="none" stroke="white" stroke-width="1"/>
+      </pattern>
+    </defs>
+    <rect width="1200" height="400" fill="url(#hexPat)"/>
+  </svg>
+  <p class="hero-eyebrow">Roche Diagnostics &mdash; AIM Framework</p>
+  <h1 class="hero-title">How <strong>targeted messaging</strong><br>gets built</h1>
+  <p class="hero-subtitle">The AIM Framework organises Roche content into layers — from long-term strategic anchors through to the specific buying influences and disease areas that shape every communication.</p>
+  <div class="hero-scroll-hint">
+    <div class="scroll-line"></div>
+    <span>Scroll to explore</span>
+  </div>
+</section>
+
+
+<!-- ══ STAGE 1: Four framework layers ══ -->
+<div class="stage">
+  <div class="stage-header reveal" id="s1-header">
+    <div class="stage-eyebrow">
+      <div class="stage-num">1</div>
+      <span class="stage-eyebrow-label">The four layers</span>
+    </div>
+    <h2 class="stage-title">How the framework is structured</h2>
+    <p class="stage-desc">The prototype AIM Framework operates in four distinct layers (though more may be defined over time). Each layer narrows the content focus — from enduring strategic themes down to specific product portfolios.</p>
+  </div>
+
+  <div style="position:relative; overflow:visible; padding: 100px 0 80px;">
+
+    <!-- Connecting arrows SVG overlay — all 6 arc pairs, above and below -->
+    <svg class="layer-arrows-overlay reveal" id="layer-arrows" style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:visible;pointer-events:none;" viewBox="0 0 1000 280" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+      <!-- Box edges at x: 178=L1right, 322=L2left, 428=L2right, 572=L3left, 678=L3right, 822=L4left -->
+      <!-- Arcs above boxes connect from y=100, arcs below connect from y=180 -->
+
+      <!-- ── ABOVE: L1 <-> L3 (medium arc) ── -->
+      <path d="M 178,110 C 300,40 450,40 572,110" stroke="#007AC2" stroke-width="2" stroke-dasharray="5 3" fill="none" opacity="0.7"/>
+      <polyline points="561,102 573,112 559,116" stroke="#007AC2" stroke-width="2" fill="none" opacity="0.7" stroke-linejoin="round"/>
+      <polyline points="189,102 177,112 191,116" stroke="#007AC2" stroke-width="2" fill="none" opacity="0.7" stroke-linejoin="round"/>
+
+      <!-- ── ABOVE: L1 <-> L4 (tall arc) ── -->
+      <path d="M 178,90 C 380,0 620,0 822,90" stroke="#007AC2" stroke-width="2" stroke-dasharray="5 3" fill="none" opacity="0.85"/>
+      <polyline points="811,82 823,92 809,96" stroke="#007AC2" stroke-width="2" fill="none" opacity="0.85" stroke-linejoin="round"/>
+      <polyline points="189,82 177,92 191,96" stroke="#007AC2" stroke-width="2" fill="none" opacity="0.85" stroke-linejoin="round"/>
+
+      <!-- ── ABOVE: L2 <-> L4 (medium arc) ── -->
+      <path d="M 428,110 C 550,40 700,40 822,110" stroke="#007AC2" stroke-width="2" stroke-dasharray="5 3" fill="none" opacity="0.7"/>
+      <polyline points="811,102 823,112 809,116" stroke="#007AC2" stroke-width="2" fill="none" opacity="0.7" stroke-linejoin="round"/>
+      <polyline points="439,102 427,112 441,116" stroke="#007AC2" stroke-width="2" fill="none" opacity="0.7" stroke-linejoin="round"/>
+
+      <!-- ── BELOW: L1 <-> L2 (tight arc) ── -->
+      <path d="M 178,170 C 220,220 280,220 322,170" stroke="#007AC2" stroke-width="2" stroke-dasharray="5 3" fill="none" opacity="0.55"/>
+      <polyline points="311,178 323,168 313,162" stroke="#007AC2" stroke-width="2" fill="none" opacity="0.55" stroke-linejoin="round"/>
+      <polyline points="189,178 177,168 187,162" stroke="#007AC2" stroke-width="2" fill="none" opacity="0.55" stroke-linejoin="round"/>
+
+      <!-- ── BELOW: L2 <-> L3 (tight arc) ── -->
+      <path d="M 428,170 C 470,220 530,220 572,170" stroke="#007AC2" stroke-width="2" stroke-dasharray="5 3" fill="none" opacity="0.55"/>
+      <polyline points="561,178 573,168 563,162" stroke="#007AC2" stroke-width="2" fill="none" opacity="0.55" stroke-linejoin="round"/>
+      <polyline points="439,178 427,168 437,162" stroke="#007AC2" stroke-width="2" fill="none" opacity="0.55" stroke-linejoin="round"/>
+
+      <!-- ── BELOW: L3 <-> L4 (tight arc) ── -->
+      <path d="M 678,170 C 720,220 780,220 822,170" stroke="#007AC2" stroke-width="2" stroke-dasharray="5 3" fill="none" opacity="0.55"/>
+      <polyline points="811,178 823,168 813,162" stroke="#007AC2" stroke-width="2" fill="none" opacity="0.55" stroke-linejoin="round"/>
+      <polyline points="689,178 677,168 687,162" stroke="#007AC2" stroke-width="2" fill="none" opacity="0.55" stroke-linejoin="round"/>
+    </svg>
+
+    <div class="layer-grid">
+
+    <div class="layer-box reveal" id="lb1">
+      <div class="layer-box-num">Layer 01</div>
+      <div class="layer-box-title">Anchor</div>
+      <div class="layer-box-rule"></div>
+      <div class="layer-box-desc">Long-term, Roche-centric core themes driven by strategic priorities. They don&rsquo;t require regular updating, but serve as key ideas for more specific content to anchor to.</div>
+      <div class="layer-box-chips">
+        <span class="lchip">Innovation</span>
+        <span class="lchip">Collaboration</span>
+        <span class="lchip">Quality</span>
+        <span class="lchip">Digital</span>
+        <span class="lchip">+3 more</span>
+      </div>
+    </div>
+
+    <div class="layer-box reveal reveal-delay-1" id="lb2">
+      <div class="layer-box-num">Layer 02</div>
+      <div class="layer-box-title">Buying Influence</div>
+      <div class="layer-box-rule"></div>
+      <div class="layer-box-desc">How we identify and gather targeted content. Each buying influence has a distinct decision-making lens that shapes which anchors are most relevant.</div>
+      <div class="layer-box-chips">
+        <span class="lchip">Clinical</span>
+        <span class="lchip">Financial</span>
+        <span class="lchip">Operational</span>
+      </div>
+    </div>
+
+    <div class="layer-box reveal reveal-delay-2" id="lb3">
+      <div class="layer-box-num">Layer 03</div>
+      <div class="layer-box-title">Disease Area Bridge</div>
+      <div class="layer-box-rule"></div>
+      <div class="layer-box-desc">Content that connects anchors to disease areas. This layer translates strategic themes into clinically relevant narratives for specific specialties.</div>
+      <div class="layer-box-chips">
+        <span class="lchip">Neurology</span>
+        <span class="lchip">Oncology</span>
+        <span class="lchip">Infectious Disease</span>
+        <span class="lchip">+1 more</span>
+      </div>
+    </div>
+
+    <div class="layer-box reveal reveal-delay-3" id="lb4">
+      <div class="layer-box-num">Layer 04</div>
+      <div class="layer-box-title">Portfolio Area Bridge</div>
+      <div class="layer-box-rule"></div>
+      <div class="layer-box-desc">Content that connects anchors to portfolios. The final layer grounds strategic messaging in Roche&rsquo;s specific product and solution areas.</div>
+      <div class="layer-box-chips">
+        <span class="lchip">Core Lab</span>
+        <span class="lchip">Molecular Lab</span>
+        <span class="lchip">Path Lab</span>
+        <span class="lchip">Point of Care</span>
+        <span class="lchip">Digital Solutions</span>
+      </div>
+    </div>
+
+    </div>
+  </div>
 
 <!-- Connector -->
 <div class="stage-divider reveal" id="sdiv1">
